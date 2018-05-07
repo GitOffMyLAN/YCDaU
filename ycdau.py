@@ -14,7 +14,10 @@ if options.filename != None:
     print("Downloading Videos")
     config = options.filename
     print("Config file: %s" %format(config))
-    config_file = open(config, 'r+')
-    print(config_file.read())
+    config_file = open(config , 'r')
+    config_array = []
+    for line in config_file:
+        config_array.append(line.split(','))
+    print(config_array[0][0])
 if options.array != None:
     print("Adding Youtube Channels")
