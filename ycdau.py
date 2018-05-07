@@ -1,6 +1,7 @@
 #!/bin/python/
 from optparse import OptionParser
-import os, sys
+from subprocess import call
+import os, sys, re
 # Set the command arguments
 parser = OptionParser()
 parser.add_option("-c", "--config", dest="filename",
@@ -17,7 +18,12 @@ if options.filename != None:
     config_file = open(config , 'r')
     config_array = []
     for line in config_file:
-        config_array.append(line.split(','))
-    print(config_array[0][0])
+        config_array.append(line.replace('[', '').replace('\n', '').replace(']', '').split(','))
+    i = 0
+    while i < len(config_array):
+        print(i)
+        print("youtube-dl", "-o" + str(config_array[i][0]), str(config_array[i][2]) + str(config_array[i][1]))
+        call(["youtube-dl", "-o " + str(config_array[i][0]), str(config_array[i][2]).replace('"', '') + str(config_array[i][1]).replace('"', '')])
+        i = i + 1
 if options.array != None:
     print("Adding Youtube Channels")
