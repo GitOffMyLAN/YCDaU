@@ -6,6 +6,6 @@ This is a script to download a whole channels set of videos and checks for updat
 
 To install run this command (for Linux and macOS)
 
-'''bash
+```bash
 bash install.sh
-'''
+```
