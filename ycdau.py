@@ -1,7 +1,6 @@
 #!/bin/python/
 from optparse import OptionParser
-from subprocess import call
-import os, sys, re
+import os, sys, re, subprocess
 # Set the command arguments
 parser = OptionParser()
 parser.add_option("-c", "--config", dest="filename",
@@ -22,8 +21,9 @@ if options.filename != None:
     i = 0
     while i < len(config_array):
         print(i)
-        print("youtube-dl", "-o" + str(config_array[i][0]), str(config_array[i][2]) + str(config_array[i][1]))
-        call(["youtube-dl", "-o " + str(config_array[i][0]), str(config_array[i][2]).replace('"', '') + str(config_array[i][1]).replace('"', '')])
+        command = "youtube-dl -o '" + str(config_array[i][0]).replace('"', '') + "/%(title)s.%(ext)s'" + str(config_array[i][2]).replace('"', '') + str(config_array[i][1]).replace('"', '')
+        print(command)
+        os.system(command)
         i = i + 1
 if options.array != None:
     print("Adding Youtube Channels")
