@@ -11,7 +11,15 @@ bash install.sh
 ```
 
 ## Usage
-To use this program you must add the channels useing -a E.G
-```shell
-ycdau -a [directory, video url, any options for youtube-dl (quality, name, Etc)]
+### downloading
+To download based on the data in the channel file
+``` shell
+ycdau -c channel file
 ```
+
+### adding channels or playlist
+To use this program you must add the channels using -a E.G
+```shell
+ycdau -a "[channel file, directory to download to, video url, any options for youtube-dl (quality, name, Etc)]"
+```
+you can add as many channels at once if you make each channel a different arrays.
