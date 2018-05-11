@@ -8,7 +8,6 @@ parser.add_option("-c", "--config", dest="filename",
 parser.add_option("-a", "--add", dest="array",
                   help="To add a new youtube channel and any other info", metavar="ARRAY")
 (options, args) = parser.parse_args()
-print(options)
 #finds the config file
 if options.filename != None:
     print("Downloading Videos")
@@ -25,5 +24,10 @@ if options.filename != None:
         print(command)
         os.system(command)
         i = i + 1
+    config_file.close()
 if options.array != None:
     print("Adding Youtube Channels")
+    array = options.array.replace('[', '').replace('\n', '').replace(']', '').split(',')
+    file = open(array[0], 'a')
+    adding = "," + str(array)
+    file.write(adding)
