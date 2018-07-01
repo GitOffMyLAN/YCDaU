@@ -20,6 +20,6 @@ ycdau -c channel file
 ### adding channels or playlist
 To use this program you must add the channels using -a E.G
 ```shell
-ycdau -a "[channel file, directory to download to, video url, any options for youtube-dl (quality, name, Etc)]"
+ycdau -a the channel file -f "[channel file, directory to download to, video url, any options for youtube-dl (quality, name, Etc)]"
 ```
 you can add as many channels at once if you make each channel a different arrays.
