@@ -41,6 +41,6 @@ if options.array != None:
     file = open(array[0], 'a')
     adding = "," + str(array)
     file.write(adding)
-if options.init != None:
-    print("Seting up init and configs")
-    os.system("touch ~/youtube")
+#if options.init != None:
+#    print("Seting up init and configs")
+#    os.system("touch ~/youtube")
