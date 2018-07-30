@@ -28,8 +28,9 @@ if options.filename != None:
     while i < len(config_array):
         print(i)
         if options.downloadSpeed != None:
-         command = "youtube-dl -r " + option.downloadSpeed + " -o '" + str(config_array[i][0]).replace('"', '') + "/%(title)s.%(ext)s'" + str(config_array[i][2]).replace('"', '') + str(config_array[i][1]).replace('"', '') 
-        command = "youtube-dl -o '" + str(config_array[i][0]).replace('"', '') + "/%(title)s.%(ext)s'" + str(config_array[i][2]).replace('"', '') + str(config_array[i][1]).replace('"', '')
+          command = "youtube-dl -r " + option.downloadSpeed + " -o '" + str(config_array[i][0]).replace('"', '') + "/%(title)s.%(ext)s'" + str(config_array[i][2]).replace('"', '') + str(config_array[i][1]).replace('"', '')
+        else:
+          command = "youtube-dl -o '" + str(config_array[i][0]).replace('"', '') + "/%(title)s.%(ext)s'" + str(config_array[i][2]).replace('"', '') + str(config_array[i][1]).replace('"', '')
         print(command)
         os.system(command)
         i = i + 1
