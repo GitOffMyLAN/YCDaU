@@ -5,14 +5,18 @@ import os, sys, re, subprocess
 parser = OptionParser()
 parser.add_option("-c", "--config", dest="filename",
                   help="File that has the channel and download info", metavar="FILE")
-parser.add_option("-a", "--add", dest="array",
+parser.add_option("-a", "--add", dest="ToAdd",
                   help="To add a new youtube channel and any other info", metavar="ARRAY")
-parser.add_option("-i", "--index", dest="index",
+parser.add_option("-i", "--index", dest="Change",
                   help="to set the index to which to read the file from, say to skip the entry 10 in your list then -i 10", metavar="")
 parser.add_option("-s", "--spec-internet", dest="downloadSpeed",
                  help="To set the script to download at a set download speed")
+parser.add_option("-u", "--update", dest="update", 
+                 help="TO update YCDau")
 (options, args) = parser.parse_args()
 #finds the config file
+if options.update != None:
+   os.system(cd /tmp/ && git clone https://github.com/GitOffMyLAN/YCDaU.git && cd YCDaU && sudo make && echo "Update Complete")
 if options.filename != None:
     print("Downloading Videos")
     config = options.filename
